@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Pembasmi Haters - u0_a345</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 20px;
+        }
+        .judul { color: #ff00ff; font-size: 24px; }
+        .kalkulator {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            margin: 20px auto;
+            border: 2px solid #ff00ff;
+        }
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #000;
+            color: #ff00ff;
+            border: 1px solid #ff00ff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button { background: #ff00ff; color: #000; font-weight: bold; }
+        #hasil { margin-top: 20px; font-size: 18px; color: #00ff00; }
+    </style>
+</head>
+<body>
+    <h1 class="judul">🤍🖤🪽 KALKULATOR u0_a345 🪽🖤🤍</h1>
+    <div class="kalkulator">
+        <input type="number" id="angka1" placeholder="Angka 1">
+        <select id="operasi">
+            <option value="+">Tambah +</option>
+            <option value="-">Kurang -</option>
+            <option value="*">Kali ×</option>
+            <option value="/">Bagi ÷</option>
+            <option value="**">Pangkat</option>
+        </select>
+        <input type="number" id="angka2" placeholder="Angka 2">
+        <button onclick="hitung()">HITUNG SAYANG</button>
+        <div id="hasil">Hasil: </div>
+    </div>
+
+    <script>
+        function hitung() {
+            let a1 = parseFloat(document.getElementById('angka1').value);
+            let a2 = parseFloat(document.getElementById('angka2').value);
+            let op = document.getElementById('operasi').value;
+            let hasil;
+            if (op == '+') hasil = a1 + a2;
+            else if (op == '-') hasil = a1 - a2;
+            else if (op == '*') hasil = a1 * a2;
+            else if (op == '/') {
+                if (a2 == 0) {
+                    document.getElementById('hasil').innerHTML = "ERROR: GABISA DIBAGI 0. SAMA KAYAK HATERS GABISA MIKIR";
+                    return;
+                }
+                hasil = a1 / a2;
+            }
+            else if (op == '**') hasil = a1 ** a2;
+            document.getElementById('hasil').innerHTML = `Hasil: ${hasil}<br>u0_a345 bilang: Netizen yang ngetawain aku = 0 nilainya`;
+        }
+    </script>
+</body>
+      </html>
