@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game u0_a345 V2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ff00ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 { 
+            text-shadow: 0 0 10px #ff00ff;
+            font-size: 28px;
+        }
+        input, button {
+            padding: 15px;
+            margin: 10px;
+            border: 2px solid #ff00ff;
+            background: black;
+            color: #ff00ff;
+            border-radius: 10px;
+            font-size: 18px;
+            width: 200px;
+        }
+        button {
+            background-color: #ff00ff;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 22px;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GAME PEMBASMI HATERS V2</h1>
+    <p>u0_a345 nyimpen angka 1-10. Tembak yang bener sayang!</p>
+    
+    <input type="number" id="tebakan" min="1" max="10" placeholder="1-10 aja" oninput="if(this.value > 10) this.value = 10; if(this.value < 1) this.value = '';">
+    <br>
+    <button onclick="cekTebakan()">TEMBAK SAYANG</button>
+    
+    <h2 id="hasil"></h2>
+
+    <script>
+        let angkaRahasia = Math.floor(Math.random() * 10) + 1;
+        
+        function cekTebakan() {
+            let tebakan = document.getElementById('tebakan').value;
+            let hasil = document.getElementById('hasil');
+            
+            if(tebakan == "") {
+                hasil.innerHTML = "ISI DULU SAYANG 😭";
+                return;
+            }
+            
+            if(tebakan == angkaRahasia) {
+                hasil.innerHTML = "BENER! u0_a345 MENANG! Haters = 0 nilainya 🤍🖤🪽";
+                angkaRahasia = Math.floor(Math.random() * 10) + 1;
+            } else {
+                hasil.innerHTML = "SALA H. Netizen ketawa. Coba lagi sayang";
+            }
+            document.getElementById('tebakan').value = "";
+        }
+    </script>
+</body>
+                                                  </html>
